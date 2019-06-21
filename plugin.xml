@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="vanke-cordova-voice" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>vanke-cordova-voice</name>
+	<js-module name="VankeVoice" src="www/vankeVoice.js">
+		<clobbers target="VankeVoice" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="VankeVoice">
+				<param name="android-package" value="com.vanke.cordova.voice.VankeVoice" />
+			</feature>
+		</config-file>
+	  <config-file parent="/*" target="AndroidManifest.xml" />
+	  <source-file src="src/android/VankeVoice.java" target-dir="src/com/vanke/cordova/voice/" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="VankeVoice">
+				<param name="ios-package" value="VankeVoice" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/VankeVoice.m" />
+	</platform>
+</plugin>

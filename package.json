@@ -1,0 +1,44 @@
+{
+  "_from": "git+https://github.com/shuto-cn/lebangVoice.git",
+  "_id": "vanke-cordova-voice@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/vanke-cordova-voice",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/shuto-cn/lebangVoice.git",
+    "rawSpec": "https://github.com/shuto-cn/lebangVoice.git",
+    "saveSpec": "git+https://github.com/shuto-cn/lebangVoice.git",
+    "fetchSpec": "https://github.com/shuto-cn/lebangVoice.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/shuto-cn/lebangVoice.git#2937fa2669de1a0a08c72837446d2747612caa17",
+  "_spec": "https://github.com/shuto-cn/lebangVoice.git",
+  "_where": "/Users/xxy/Documents/vankework/vkpproject/aurora-app3.1.0",
+  "author": {
+    "name": "vanke"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "vanke-cordova-voice",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "vanke-cordova-voice",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "vanke-cordova-voice",
+  "version": "1.0.0"
+}
