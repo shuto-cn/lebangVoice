@@ -8,14 +8,17 @@ ionic cordova plugin add https://github.com/shuto-cn/lebangVoice.git
 ```javascript
 if(VankeVoice){
     VankeVoice.openVoice(function (msg) {
-        console.log("getPictureFromCamera",msg);
+        console.log("openVoice",msg);
     },function (err) {
-        console.error("getPictureFromCamera",err);
+        console.error("openVoice",err);
     });
     VankeVoice.closeVoice(8,function (msg) {
-        console.log("getPictureFromAlbum",msg);
+        console.log("closeVoice",msg);
     },function (err) {
-        console.error("getPictureFromAlbum",err);
+        console.error("closeVoice",err);
     });
+    
+    document.addEventListener('VankeVoice.textData',function (evt) {
+    },false);
 }
 ```
