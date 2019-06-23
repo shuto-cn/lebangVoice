@@ -1,5 +1,5 @@
 package com.vanke.cordova.voice;
-import android.webkit.JavascriptInterface;
+
 import android.app.Activity;
 
 import org.apache.cordova.CallbackContext;
@@ -13,6 +13,7 @@ public class VankeVoice extends CordovaPlugin {
 
     private Activity activity;
     private CordovaWebView webView;
+    private static VankeVoice vankeVoice;
 
     public VankeVoice() {
     }
@@ -22,18 +23,20 @@ public class VankeVoice extends CordovaPlugin {
         super.initialize(cordova, webView);
         this.activity = cordova.getActivity();
         this.webView = webView;
+
     }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+
         if (action.equals("openVoice")) {
             callbackContext.success();
+            vankeVoice = this;
 
-            //开启语音  callback(data) data为语音返回的文字
-            callback("232321312323");
+            //开启语音操作
 
             return true;
-        }else if(action.equals("closeVoice")){
+        } else if (action.equals("closeVoice")) {
             callbackContext.success();
 
             //关闭语音
@@ -44,18 +47,12 @@ public class VankeVoice extends CordovaPlugin {
         return false;
     }
 
-
-
-    @JavascriptInterface
-    public void callback(String data) {
-        openVoice(String.format("window.VankeVoice.voiceToTextCallback(%s);", data));
-    }
-
-    private void openVoice(final String js) {
-        activity.runOnUiThread(new Runnable() {
+    //调用返回的方法
+    public static void openVoice(final String js) {
+        VankeVoice.vankeVoice.activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                webView.loadUrl("javascript:" + js);
+                VankeVoice.vankeVoice.webView.loadUrl("javascript:" + String.format("window.VankeVoice.voiceToTextCallback('%s');", js));
             }
         });
     }
